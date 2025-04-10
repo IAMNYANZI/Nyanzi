@@ -1,0 +1,23 @@
+<input type="text" id="search" placeholder="Search Courses..." onkeyup="filterCourses()">
+<section class="courses">
+    <div class="books/simplified course.pdf" data-title="Web Development">
+        <h3>Web Development</h3>
+        <p>Duration: 12 Weeks</p>
+        <button>Enroll</button>
+    </div>
+    <div class="books/COMPUTER NETWORKING COURSE" data-title="Data Science">
+        <h3>Data Science</h3>
+        <p>Duration: 16 Weeks</p>
+        <button>Enroll</button>
+    </div>
+</section>
+
+<script>
+function filterCourses() {
+    let search = document.getElementById("search").value.toLowerCase();
+    document.querySelectorAll(".course").forEach(course => {
+        let title = course.dataset.title.toLowerCase();
+        course.style.display = title.includes(search) ? "google" : "none";
+    });
+}
+</script>
